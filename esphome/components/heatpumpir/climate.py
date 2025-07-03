@@ -50,6 +50,7 @@ PROTOCOLS = {
     "mitsubishi_msc": Protocol.PROTOCOL_MITSUBISHI_MSC,
     "mitsubishi_msy": Protocol.PROTOCOL_MITSUBISHI_MSY,
     "mitsubishi_sez": Protocol.PROTOCOL_MITSUBISHI_SEZ,
+    "olimpia_maestro": Protocol.PROTOCOL_OLIMPIA_MAESTRO,
     "panasonic_ckp": Protocol.PROTOCOL_PANASONIC_CKP,
     "panasonic_dke": Protocol.PROTOCOL_PANASONIC_DKE,
     "panasonic_eke": Protocol.PROTOCOL_PANASONIC_EKE,
@@ -126,6 +127,6 @@ async def to_code(config):
     cg.add(var.set_max_temperature(config[CONF_MAX_TEMPERATURE]))
     cg.add(var.set_min_temperature(config[CONF_MIN_TEMPERATURE]))
 
-    cg.add_library("tonia/HeatpumpIR", "1.0.35")
+    cg.add_library("tonia/HeatpumpIR", None)
     if CORE.is_libretiny:
         CORE.add_platformio_option("lib_ignore", "IRremoteESP8266")
